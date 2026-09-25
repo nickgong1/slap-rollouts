@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SLAP — Supplementary rollouts</title>
+  <meta name="description" content="Anonymous supplementary rollouts for a world-action model that predicts semantic latents and actions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="bar">
+    <a class="brand" href="#real">SLAP</a>
+    <nav>
+      <a href="#real">Real robot</a>
+      <a href="#sim">Simulation</a>
+    </nav>
+    <span class="anon">Anonymous</span>
+  </header>
+
+  <main id="content">
+    <section id="real">
+      <div class="section-head">
+        <h2>Real-robot rollouts</h2>
+        <p class="lede">
+          We show extra real robot rollouts from SLAP with different environmental perturbations we defined in the paper. We further show that we can combine some perturbations together and SLAP can still successfully finish the task.
+        </p>
+      </div>
+
+      <div class="group">
+        <div class="grid">
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/real/fork-layout.gif" data-title="Fork onto the plate">
+              <img src="assets/real/fork-layout.gif" width="560" height="403" alt="Robot arm picking a fork from a cluttered table and placing it on a plate.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Table layout</span></p>
+              <h3>Fork onto the plate</h3>
+              <p>Unseen objects sit around the plate: a bowl, a pot, cups, and a banana. The gripper isolates the fork and lays it on the plate.</p>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/real/spoon-layout-appearance.gif" data-title="Spoon onto the plate">
+              <img src="assets/real/spoon-layout-appearance.gif" width="560" height="403" alt="Robot arm placing a wooden spoon on a plate over a dark mat, with distractor objects nearby.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Table layout</span><span>Table appearance</span></p>
+              <h3>Spoon onto the plate</h3>
+              <p>The workspace is covered by a dark mat, and the distractors are rearranged. The spoon is still picked up and placed on the plate.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="grid">
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/real/cup-pose-layout.gif" data-title="Cup onto the plate, shifted start">
+              <img src="assets/real/cup-pose-layout.gif" width="560" height="403" alt="Robot arm starting away from the cup, then grasping the rim and standing the cup on a plate amid clutter.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Gripper pose</span><span>Table layout</span></p>
+              <h3>Cup onto the plate</h3>
+              <p>The arm begins away from the training pose, with a fork, spoon, cups, and other objects on the table. It takes the red cup by the rim and stands it upright on the plate.</p>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/real/cup-layout-appearance.gif" data-title="Cup onto the plate, dark mat">
+              <img src="assets/real/cup-layout-appearance.gif" width="560" height="403" alt="Robot arm standing a red cup upright on a plate that sits on a dark foam mat.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Table layout</span><span>Table appearance</span></p>
+              <h3>Cup onto the plate</h3>
+              <p>The same placement on the dark mat, with a different arrangement of distractors. The cup stays upright after release.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="grid">
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/real/cable-pose.gif" data-title="Cable into the drawer, shifted start">
+              <img src="assets/real/cable-pose.gif" width="560" height="403" alt="Robot arm starting from a shifted pose in reduced lighting, picking up a black cable, placing it in an open white drawer, and closing the drawer.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Gripper pose</span><span>Lighting</span></p>
+              <h3>Cable to drawer and close drawer</h3>
+              <p>The gripper opens from a pose well off the training configuration, and the room lighting is reduced. It still collects the cable, drops it inside the drawer, and pushes the drawer shut.</p>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/real/cable-layout.gif" data-title="Cable into the drawer, cluttered table">
+              <img src="assets/real/cable-layout.gif" width="560" height="403" alt="Robot arm placing a cable into a drawer while a bowl, banana, box, and cup sit nearby as distractors.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Table layout</span></p>
+              <h3>Cable to drawer and close drawer</h3>
+              <p>A bowl, cup, banana, and box surround the drawer. The policy still treats the cable as the target, places it inside, and closes the drawer.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="sim">
+      <div class="section-head">
+        <h2>LIBERO-Plus rollouts</h2>
+        <p class="lede">
+          We show eight successful trials from libero-Plus, two from each suite, together covering all seven perturbation types.
+        </p>
+      </div>
+
+      <div class="group">
+        <div class="grid">
+          <figure class="card sim">
+            <button type="button" class="frame" data-full="assets/sim/spatial-camera.gif" data-title="Spatial · camera viewpoint">
+              <img src="assets/sim/spatial-camera.gif" width="512" height="256" alt="Simulation: a tilted third-person view of a robot placing a black bowl next to a cookie box onto a plate, with a wrist view on the right.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Camera viewpoint</span></p>
+              <h3>Bowl next to the cookie box</h3>
+              <p class="quote">“Pick up the black bowl next to the cookie box and place it on the plate.”</p>
+              <p>The third-person camera is rotated and shifted. The bowl beside the cookie box is the one that ends on the plate.</p>
+            </figcaption>
+          </figure>
+          <figure class="card sim">
+            <button type="button" class="frame" data-full="assets/sim/spatial-background.gif" data-title="Spatial · background texture">
+              <img src="assets/sim/spatial-background.gif" width="512" height="256" alt="Simulation: a wooden tabletop where a robot lifts a black bowl off a cookie box and places it on a plate.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Background texture</span></p>
+              <h3>Bowl on the cookie box</h3>
+              <p class="quote">“Pick up the black bowl on the cookie box and place it on the plate.”</p>
+              <p>The tabletop texture is replaced. The policy still uses the spatial relation in the instruction rather than the original table appearance.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="grid">
+          <figure class="card sim">
+            <button type="button" class="frame" data-full="assets/sim/object-language.gif" data-title="Object · paraphrased instruction">
+              <img src="assets/sim/object-language.gif" width="512" height="256" alt="Simulation: a robot picking a salad-dressing bottle from a row of bottles and placing it in a basket.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Language</span></p>
+              <h3>Salad dressing, paraphrased</h3>
+              <p class="quote">“To save time later, pick up the salad dressing now and place it in the meal-prep basket.”</p>
+              <p>The wording is not the original template. The dressing bottle is still the object that goes into the basket.</p>
+            </figcaption>
+          </figure>
+          <figure class="card sim">
+            <button type="button" class="frame" data-full="assets/sim/object-noise.gif" data-title="Object · sensor noise">
+              <img src="assets/sim/object-noise.gif" width="512" height="256" alt="Simulation: a robot placing an orange-juice carton into a basket while camera noise is present.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Sensor noise</span></p>
+              <h3>Orange juice into the basket</h3>
+              <p class="quote">“Pick up the orange juice and place it in the basket.”</p>
+              <p>Noise is added to the camera observations. The juice carton is distinguished from the neighboring bottles and placed in the basket.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="grid">
+          <figure class="card sim">
+            <button type="button" class="frame" data-full="assets/sim/goal-light.gif" data-title="Goal · lighting">
+              <img src="assets/sim/goal-light.gif" width="512" height="256" alt="Simulation: a robot opening the middle drawer of a cabinet under a changed lighting condition.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Lighting</span></p>
+              <h3>Open the middle drawer</h3>
+              <p class="quote">“Open the middle drawer of the cabinet.”</p>
+              <p>Illumination differs from the training scenes. The arm pulls the middle drawer open.</p>
+            </figcaption>
+          </figure>
+          <figure class="card sim">
+            <button type="button" class="frame" data-full="assets/sim/goal-layout.gif" data-title="Goal · object layout">
+              <img src="assets/sim/goal-layout.gif" width="512" height="256" alt="Simulation: a robot lifting a wine bottle from a rearranged table and placing it on top of a cabinet.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Object layout</span></p>
+              <h3>Wine bottle onto the cabinet</h3>
+              <p class="quote">“Put the wine bottle on top of the cabinet.”</p>
+              <p>Objects have been moved from their training positions. The bottle is lifted onto the cabinet anyway.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="grid">
+          <figure class="card sim">
+            <button type="button" class="frame" data-full="assets/sim/long-robot.gif" data-title="Long · robot initial state">
+              <img src="assets/sim/long-robot.gif" width="512" height="256" alt="Simulation: a robot turning on a stove and placing a moka pot on the burner from a shifted initial arm pose.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Robot initial state</span></p>
+              <h3>Stove, then the moka pot</h3>
+              <p class="quote">“Turn on the stove and put the moka pot on it.”</p>
+              <p>The arm starts from a different configuration. It turns the knob, then sets the pot on the burner.</p>
+            </figcaption>
+          </figure>
+          <figure class="card sim">
+            <button type="button" class="frame" data-full="assets/sim/long-camera.gif" data-title="Long · camera viewpoint">
+              <img src="assets/sim/long-camera.gif" width="512" height="256" alt="Simulation from a raised camera: a robot placing a black bowl in the bottom drawer and closing it.">
+            </button>
+            <figcaption>
+              <p class="tags"><span>Camera viewpoint</span></p>
+              <h3>Bowl in the bottom drawer</h3>
+              <p class="quote">“Put the black bowl in the bottom drawer of the cabinet and close it.”</p>
+              <p>The camera sits higher and to the side. The bowl goes into the bottom drawer, and the drawer is closed afterward.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ 
+
+  <dialog id="viewer">
+    <form method="dialog">
+      <button class="close" value="close" aria-label="Close">Close</button>
+    </form>
+    <img id="viewer-img" alt="">
+    <p id="viewer-title"></p>
+  </dialog>
+
+  <script src="site.js"></script>
+</body>
+</html>
