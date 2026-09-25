@@ -17,6 +17,7 @@
     <a class="brand" href="#real">SLAP</a>
     <nav>
       <a href="#real">Real robot</a>
+      <a href="#compare">SLAP vs π0.5</a>
       <a href="#sim">Simulation</a>
     </nav>
     <span class="anon">Anonymous</span>
@@ -101,6 +102,65 @@
               <p class="tags"><span>Table layout</span></p>
               <h3>Cable to drawer and close drawer</h3>
               <p>A bowl, cup, banana, and box surround the drawer. The policy still treats the cable as the target, places it inside, and closes the drawer.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare">
+      <div class="section-head">
+        <h2>SLAP and π0.5</h2>
+        <p class="lede">
+          We show some visual comparisons between SLAP and π0.5. We find that SLAP is especially strong when robot gripper starts from a shifted position. 
+        </p>
+      </div>
+
+      <div class="group">
+        <div class="grid">
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/compare/slap-spoon.gif" data-title="SLAP, spoon onto the plate">
+              <img src="assets/compare/slap-spoon.gif" width="560" height="403" alt="SLAP picks up a wooden spoon from a shifted starting pose and places it on the plate.">
+            </button>
+            <figcaption>
+              <p class="tags"><span class="who">SLAP</span><span>Gripper pose</span></p>
+              <h3>Spoon onto the plate</h3>
+              <p>From the unseen robot gripper starting position, the arm picks up the spoon and sets it on the plate. In the middle, the arm quickly and successfully revovers from a miss and continues to finish the task.</p>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/compare/pi05-spoon.gif" data-title="π0.5, spoon onto the plate">
+              <img src="assets/compare/pi05-spoon.gif" width="560" height="403" alt="π0.5 reaches for a wooden spoon from a shifted starting pose but does not place it on the plate.">
+            </button>
+            <figcaption>
+              <p class="tags"><span class="who other">π0.5</span><span>Gripper pose</span></p>
+              <h3>Spoon onto the plate</h3>
+              <p>From a similar starting position, the arm fails to recover from the missed grasp and results in a failure.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="grid">
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/compare/slap-cable.gif" data-title="SLAP, cable into the drawer">
+              <img src="assets/compare/slap-cable.gif" width="560" height="403" alt="SLAP picks up a cable from a shifted starting pose, places it in the drawer, and closes the drawer.">
+            </button>
+            <figcaption>
+              <p class="tags"><span class="who">SLAP</span><span>Gripper pose</span></p>
+              <h3>Cable into the drawer</h3>
+              <p>From an unseen starting position, the arm still collects the cable, drops it in the open drawer, and pushes the drawer shut.</p>
+            </figcaption>
+          </figure>
+          <figure class="card">
+            <button type="button" class="frame" data-full="assets/compare/pi05-cable.gif" data-title="π0.5, cable into the drawer">
+              <img src="assets/compare/pi05-cable.gif" width="560" height="403" alt="π0.5 hovers over a cable from a shifted starting pose and leaves the drawer open.">
+            </button>
+            <figcaption>
+              <p class="tags"><span class="who other">π0.5</span><span>Gripper pose</span></p>
+              <h3>Cable into the drawer</h3>
+              <p>With the changed starting position, the arm stays over the cable and cannot proceed with the task.</p>
             </figcaption>
           </figure>
         </div>
